@@ -58,6 +58,15 @@ var formTable = () => {
         }
         data[data.length] = temp;
     }
+    
+    /* Fixing empty Data     */
+    for ( let i = 0; i < data.length; i++) {
+	if ( data[i].length == 0 ){
+		data[i] = " ";
+    }
+}
+    
+    
     console.log(data);
 }
 var objects = [];

@@ -1,13 +1,25 @@
-/* спрячем не сформированые элементы */
+/* hide not formed objects */
 $("#myTable").hide();
 $("#mainButton").hide();
 
-/* Кол-во Груп выбираемых параметров */
+/* number of button groups */
+/** @type {number} */
 var kolvoParam;
 
-/* Место, для хранения массива массивов выбраных данных */
+/* Place, for holding choosed data */
+/** @type {Array.<Array.<>>} */
 var data = [];
 
+/* Array of objects */
+/** @type {Array.<Array.<>>} */
+var objects = [];
+
+/**
+ * Quiz Step №1:
+ * setting number of button groups in kolvoParam, hiding current window
+ * @param 
+ * @returns 
+ */
 var quizStepOne = () => {
     btnGroup = $("#quiz").children()[1].children;
     for ( let i = 0; i < btnGroup.length; i++){
@@ -20,6 +32,12 @@ var quizStepOne = () => {
     $( "#quiz" ).empty();
 }
 
+/**
+ * Quiz Step №2:
+ * Forming Quiz Step 2 window, showing it
+ * @param 
+ * @returns 
+ */
 var quizStepTwo = () => {
     let appendingString = "";
     /* Adding some text */
@@ -37,12 +55,20 @@ var quizStepTwo = () => {
     $( "#quiz" ).show(250);
 }
 
-/* show Main Button */
+/**
+ * show Main Button
+ * @param 
+ * @returns 
+ */
 var unlock = () => {
     $("#mainButton").show(300);
 }
 
-/* forming object variety */
+/**
+ * forming object variety
+ * @param
+ * @returns
+ */
 var formTable = () => {
     /* get button groups scope */
     var grwr = $("#groupWrapper");
@@ -69,8 +95,12 @@ var formTable = () => {
     
     console.log(data);
 }
-var objects = [];
-/* BE AWARE --- ARMAGEDDON */
+
+/**
+ * forming array of an objects
+ * @param
+ * @returns
+ */
 var formObjects = () => {
     objects = [];
     for ( let q = 0; q < data[0].length; q++ ){
@@ -136,9 +166,12 @@ var formObjects = () => {
     }
 }
 
-/* Showing objects in Table */
+/**
+ * forming table with objects, showing it
+ * @param
+ * @returns
+ */
 var showData = () => {
-    
     /* forming header */
     $("#trAppended").empty();
     let header;
@@ -164,12 +197,3 @@ var showData = () => {
     
     $("#myTable").show();
 }
-
-
-
-
-
-
-/* $("#quiz").children()[1].children[0].children[0].checked */
-/* var abc = $("#firstRadio"); */
-/* abc[0].children[0].children[0].checked */
